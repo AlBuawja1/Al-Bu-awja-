@@ -9,226 +9,215 @@
         :root {
             --primary-grad: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --btn-grad: linear-gradient(to right, #da22ff, #9733ee);
-            --bg-color: #f8f9fa;
+            --whatsapp-color: #25D366;
+            --sms-color: #3498db;
+            --bg-color: #f0f2f5;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
             margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            display: flex; justify-content: center; align-items: center; min-height: 100vh;
         }
         .main-card {
-            background: white;
-            width: 95%;
-            max-width: 600px;
-            padding: 40px 30px;
-            border-radius: 25px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            text-align: center;
-            border: 6px solid #ffffff;
+            background: white; width: 95%; max-width: 500px; padding: 25px;
+            border-radius: 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center; border: 4px solid #fff;
         }
-        .header-logo { width: 70px; margin-bottom: 15px; }
+        .header-logo { width: 70px; margin-bottom: 10px; }
+        h2 { color: #333; margin: 10px 0 5px 0; font-size: 20px; font-weight: 800; }
+        .sub-title { color: #764ba2; margin-bottom: 20px; font-size: 16px; font-weight: bold; display: block; }
+        .search-area { background: #f8f9fa; padding: 15px; border-radius: 20px; border: 1px solid #eee; }
+        input { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 16px; outline: none; box-sizing: border-box; text-align: center; font-weight: bold; }
+        .btn-search { background: var(--btn-grad); color: white; border: none; padding: 14px; border-radius: 12px; cursor: pointer; font-size: 17px; font-weight: bold; width: 100%; margin-top: 15px; }
 
-        h2 { color: #333; margin: 10px 0 5px 0; font-size: 24px; font-weight: 800; }
-        .sub-title { 
-            color: #764ba2; 
-            margin-bottom: 30px; 
-            font-size: 20px; 
-            font-weight: bold;
-            display: block; 
-        }
+        .result-box { background: #fff; border-radius: 15px; padding: 15px; margin-top: 20px; display: none; border: 2px solid #764ba2; text-align: right; }
+        .data-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f0f0f0; align-items: center; }
+        .label { color: #777; font-size: 13px; }
+        .value-name { color: #2c3e50; font-weight: 900; font-size: 17px; } 
+        .success { color: #27ae60; font-weight: bold; background: #ebfaef; padding: 4px 10px; border-radius: 8px; }
+        .failed { color: #e74c3c; font-weight: bold; background: #fdf2f2; padding: 4px 10px; border-radius: 8px; }
         
-        .search-area { background: #fdfbff; padding: 20px; border-radius: 20px; margin-bottom: 20px; }
-        
-        input {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #ddd;
-            border-radius: 12px;
-            font-size: 18px;
-            outline: none;
-            box-sizing: border-box;
-            text-align: center;
-            background: #fff;
-            color: #000000; 
-            font-weight: 900; 
-        }
-        
-        button {
-            background: var(--btn-grad);
-            color: white;
-            border: none;
-            padding: 14px;
-            border-radius: 12px;
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
-            width: 100%;
-            margin-top: 10px;
-            transition: 0.3s;
-        }
-        button:active { transform: scale(0.98); }
+        .summary-box { background: #f0f7ff; border: 2px solid #3498db; border-radius: 15px; padding: 15px; text-align: center; }
+        .summary-item { margin: 10px 0; font-size: 16px; font-weight: bold; color: #2c3e50; }
+        .summary-item span { color: #764ba2; font-size: 20px; }
 
-        .result-box {
-            background: #fff;
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 20px;
-            display: none;
-            border: 2px solid #764ba2;
-            text-align: right;
-            animation: fadeIn 0.4s ease-out;
+        .actions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+        .btn-action { 
+            color: white; border: none; padding: 12px 5px; border-radius: 10px; 
+            cursor: pointer; font-size: 14px; font-weight: bold; text-decoration: none;
+            display: flex; align-items: center; justify-content: center; gap: 5px;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        .bg-whatsapp { background: var(--whatsapp-color); }
+        .bg-sms { background: var(--sms-color); }
 
-        .data-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; align-items: center; }
-        .label { color: #666; font-size: 14px; }
-        .value-name { color: #000; font-weight: 900; font-size: 18px; } 
-        .value { color: #333; font-weight: bold; }
-        .success { color: #27ae60; font-weight: bold; }
-
-        .msg-footer { margin-top: 25px; color: #764ba2; font-weight: bold; }
-        .designer-tag {
-            background: var(--btn-grad);
-            color: white;
-            display: inline-block;
-            padding: 6px 20px;
-            border-radius: 50px;
-            margin-top: 15px;
-            font-size: 13px;
-        }
+        .designer-credit { margin-top: 20px; font-size: 13px; font-weight: bold; background: var(--btn-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
     </style>
 </head>
 <body>
 
 <div class="main-card">
     <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png" class="header-logo">
-    
-    <h2>استعلام عن السهم السنوي لعام 2025</h2>
+    <h2>استعلام عن السهم السنوي 2025</h2>
     <div class="sub-title">جمعية عيت بوعوجه وفيات</div>
 
     <div class="search-area">
-        <input type="text" id="nameInput" placeholder="أدخل اسم العضو أو كلمة (إجمالي)">
-        <button onclick="doSearch()">🔍 بحــث الآن</button>
+        <input type="text" id="nameInput" placeholder="ادخل الاسم (الأول والثاني على الأقل)">
+        <button class="btn-search" onclick="doSearch()">🔍 ابحث الآن</button>
     </div>
 
     <div id="result" class="result-box"></div>
-
-    <p class="msg-footer">" مع تحيات إدارة الجمعية "</p>
-    <div class="designer-tag">تـصميم وبرمجـة: عبدالمالك عطية</div>
+    
+    <div class="designer-credit">تصميم وبرمجـة: عبدالمالك عطية</div>
 </div>
 
 <script>
     const members = [
-        {n: "جمال صالح رافالله", p: 240, d: "2025-12-18"},
-        {n: "ابراهيم جمعه بوحويه", p: 120, d: "2025-08-22"},
-        {n: "احمد جبريل عبدالمالك", p: 120, d: "2025-08-22"},
-        {n: "احمد جمعه بوحويه", p: 120, d: "2025-08-22"},
-        {n: "احميده فرج عبدالغني", p: 120, d: "2025-08-29"},
-        {n: "الصادق عبدالمالك عطيه", p: 120, d: "2025-08-22"},
-        {n: "المنتصر الصادق عبدالمالك", p: 120, d: "2025-08-22"},
-        {n: "ايمن صالح رافالله", p: 120, d: "2025-09-30"},
-        {n: "بشار صلاح جبريل", p: 120, d: "2025-08-24"},
-        {n: "جبريل صلاح جبريل", p: 120, d: "2025-08-24"},
-        {n: "جبريل فرج امراجع", p: 120, d: "2025-09-01"},
-        {n: "جمعه بوحويه الصلحين", p: 120, d: "2025-08-22"},
-        {n: "حسين صلاح جبريل", p: 120, d: "2025-08-24"},
-        {n: "حفيظ جبريل عبدالمالك", p: 120, d: "2025-08-25"},
-        {n: "حفيظ محمد رافالله", p: 120, d: "2025-08-30"},
-        {n: "حميد جبريل عبدالمالك", p: 120, d: "2025-08-25"},
-        {n: "خالد الصادق عبدالمالك", p: 120, d: "2025-08-22"},
-        {n: "خالد عبدالعاطي المقطوش", p: 120, d: "2025-12-14"},
-        {n: "خليل صلاح جبريل", p: 120, d: "2025-08-24"},
-        {n: "زايد فرج امراجع", p: 120, d: "2025-09-02"},
-        {n: "زكريه حفيظ جبريل", p: 120, d: "2025-08-25"},
-        {n: "سالم جبريل عبدالمالك", p: 120, d: "2025-08-25"},
-        {n: "سالم محمد عبدالمالك", p: 120, d: "2025-08-23"},
-        {n: "سعد عبدالعاطي المقطوش", p: 120, d: "2025-12-14"},
-        {n: "صلاح جبريل عبدالمالك", p: 120, d: "2025-08-24"},
-        {n: "طه عطيه جبريل", p: 120, d: "2025-08-22"},
-        {n: "عادل جبريل عبدالمالك", p: 120, d: "2025-08-25"},
-        {n: "عاشور فرج امراجع", p: 120, d: "2025-09-01"},
-        {n: "عامر صلاح جبريل", p: 120, d: "2025-08-24"},
-        {n: "عبد الوهاب محمد عبدالمالك", p: 120, d: "2025-08-23"},
-        {n: "عبدالرحمن محمد عبدالمالك", p: 120, d: "2025-08-23"},
-        {n: "عبدالسلام فرج عبدالغني", p: 120, d: "2025-08-29"},
-        {n: "عبدالمالك محمد عبدالمالك", p: 120, d: "2025-08-23"},
-        {n: "عطيه جبريل عبدالمالك", p: 120, d: "2025-08-22"},
-        {n: "عطيه فرج امراجع", p: 120, d: "2025-10-02"},
-        {n: "فتاح سالم جبريل", p: 120, d: "2025-08-25"},
-        {n: "فرج محمد بوعوجه", p: 120, d: "2025-08-29"},
-        {n: "كريم سالم جبريل", p: 120, d: "2025-08-25"},
-        {n: "محمد عبدالرازق الناجي", p: 120, d: "2025-08-31"},
-        {n: "محمد عبدالمالك عطيه", p: 120, d: "2025-08-23"},
-        {n: "محمد عطيه جبريل", p: 120, d: "2025-08-22"},
-        {n: "محمود فرج امراجع", p: 120, d: "2025-09-28"},
-        {n: "مهند الصادق عبدالمالك", p: 120, d: "2025-08-22"},
-        {n: "نافع صالح رافالله", p: 120, d: "2025-09-30"}
+        {n: "جمال صالح رافالله", p: 240, d: "2024-12-18", s: "خلاص لعام 2025 و 2026 ✅", paid: true, ph: ""},
+        {n: "ابراهيم جمعه بوحويه", p: 120, d: "2025-08-22", s: "خلاص لعام 2025 ✅", paid: true, ph: "0910507974"},
+        {n: "احمد جبريل عبدالمالك", p: 120, d: "2025-08-22", s: "خلاص لعام 2025 ✅", paid: true, ph: "0914947810"},
+        {n: "احمد جمعه بوحويه", p: 120, d: "2025-08-22", s: "خلاص لعام 2025 ✅", paid: true, ph: "0926392262"},
+        {n: "احميده فرج عبدالغني", p: 120, d: "2025-08-29", s: "خلاص لعام 2025 ✅", paid: true, ph: ""},
+        {n: "الصادق عبدالمالك عطيه", p: 120, d: "2025-08-22", s: "خلاص لعام 2025 ✅", paid: true, ph: "0925488627"},
+        {n: "المنتصر الصادق عبدالمالك", p: 120, d: "2025-08-22", s: "خلاص لعام 2025 ✅", paid: true, ph: "0910769070"},
+        {n: "ايمن صالح راف الله", p: 120, d: "2025-09-30", s: "خلاص لعام 2025 ✅", paid: true, ph: "0910555947"},
+        {n: "بشار صلاح جبريل", p: 120, d: "2025-08-24", s: "خلاص لعام 2025 ✅", paid: true, ph: "0928182311"},
+        {n: "جبريل صلاح جبريل", p: 120, d: "2025-08-24", s: "خلاص لعام 2025 ✅", paid: true, ph: "0924022089"},
+        {n: "جبريل فرج امراجع", p: 120, d: "2025-09-01", s: "خلاص لعام 2025 ✅", paid: true, ph: "0945241695"},
+        {n: "حفيظ جبريل عبدالمالك", p: 120, d: "2025-08-25", s: "خلاص لعام 2025 ✅", paid: true, ph: "0924986577"},
+        {n: "حفيظ محمد راف الله", p: 120, d: "2025-08-30", s: "خلاص لعام 2025 ✅", paid: true, ph: "0927918676"},
+        {n: "حميد جبريل عبدالمالك", p: 120, d: "2025-08-25", s: "خلاص لعام 2025 ✅", paid: true, ph: "0922589497"},
+        {n: "خالد الصادق عبدالمالك", p: 120, d: "2025-08-22", s: "خلاص لعام 2025 ✅", paid: true, ph: "0942839066"},
+        {n: "خالد عبدالعاطي مقطوش", p: 120, d: "2025-12-14", s: "خلاص لعام 2025 ✅", paid: true, ph: "0927060787"},
+        {n: "خليل صلاح جبريل", p: 120, d: "2025-08-24", s: "خلاص لعام 2025 ✅", paid: true, ph: "0927579574"},
+        {n: "زكريا حفيظ جبريل", p: 120, d: "2025-08-25", s: "خلاص لعام 2025 ✅", paid: true, ph: "0931564525"},
+        {n: "سالم جبريل عبدالمالك", p: 120, d: "2025-08-25", s: "خلاص لعام 2025 ✅", paid: true, ph: "0924173471"},
+        {n: "سالم محمد عبدالمالك", p: 120, d: "2025-08-23", s: "خلاص لعام 2025 ✅", paid: true, ph: "0919283966"},
+        {n: "طه عطيه جبريل", p: 120, d: "2025-08-22", s: "خلاص لعام 2025 ✅", paid: true, ph: "0918329952"},
+        {n: "عادل جبريل عبدالمالك", p: 120, d: "2025-08-25", s: "خلاص لعام 2025 ✅", paid: true, ph: "0927265392"},
+        {n: "عامر صلاح جبريل", p: 120, d: "2025-08-24", s: "خلاص لعام 2025 ✅", paid: true, ph: "0922456410"},
+        {n: "عبدالرحمن محمد عبدالمالك", p: 120, d: "2025-08-23", s: "خلاص لعام 2025 ✅", paid: true, ph: "0922775978"},
+        {n: "عبدالمالك محمد عبدالمالك", p: 120, d: "2025-08-23", s: "خلاص لعام 2025 ✅", paid: true, ph: ""},
+        {n: "عبدالوهاب محمد عبدالمالك", p: 120, d: "2025-08-23", s: "خلاص لعام 2025 ✅", paid: true, ph: "0923110838"},
+        {n: "عطيه جبريل عبدالمالك", p: 120, d: "2025-08-22", s: "خلاص لعام 2025 ✅", paid: true, ph: "0928032942"},
+        {n: "عطية فرج امراجع", p: 120, d: "2025-10-02", s: "خلاص لعام 2025 ✅", paid: true, ph: "0927412258"},
+        {n: "فرج محمد عبدالغني", p: 120, d: "2025-08-29", s: "خلاص لعام 2025 ✅", paid: true, ph: "0920251087"},
+        {n: "محمد عطيه جبريل", p: 120, d: "2025-08-22", s: "خلاص لعام 2025 ✅", paid: true, ph: "0923781053"},
+        {n: "مهند الصادق عبدالمالك", p: 120, d: "2025-08-22", s: "خلاص لعام 2025 ✅", paid: true, ph: "0913135438"},
+        {n: "نافع صالح راف الله", p: 120, d: "2025-09-30", s: "خلاص لعام 2025 ✅", paid: true, ph: "0913846098"},
+        {n: "محمود فرج امراجع", p: 120, d: "2025-09-28", s: "خلاص لعام 2025 ✅", paid: true, ph: "0915516934"},
+        {n: "جاب الله فرج امراجع", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: "0923557402"},
+        {n: "حمزه عوض الفيتوري", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: "0927157604"},
+        {n: "رافع مقطوش امراجع", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: "0926890239"},
+        {n: "عبدالرؤوف مفتاح بوحويه", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: "0945509112"},
+        {n: "سعيد رافع مقطوش", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: "0944221079"},
+        {n: "اسليمان بوحويه الصالحين", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: "0920491861"},
+        {n: "عبدالعظيم مفتاح بوحويه", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: "0920012047"},
+        {n: "عبدالغني فرج امراجع", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: "0926232796"},
+        {n: "عبدالقادر عوض الفيتوري", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: "0919458058"},
+        {n: "عبدالله مفتاح بوحويه", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: "0924610989"},
+        {n: "عيسى عوض الفيتوري", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: "0927111502"},
+        {n: "الفيتوري عوض الفيتوري", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: "0931912893"},
+        {n: "محمد رافع مقطوش", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: "0921194219"},
+        {n: "محمد صالح بوحويه", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: "0925489878"},
+        {n: "محمد ياسين مقطوش", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: "0927475272"},
+        {n: "معتز رافع مقطوش", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: "0921244439"},
+        {n: "ناصر مفتاح بوحويه", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: "0925802213"},
+        {n: "ابراهيم حسن عبدالمالك", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: "0924849210"},
+        {n: "فرج الناجي الصالحين", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "عبدالعزيز الناجي الصالحين", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "عبدالغني الناجي الصالحين", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "الصالحين الناجي الصالحين", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "جعفر الصالحين الناجي", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "اسلام الصالحين الناجي", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "الناجي عبدالعزيز الناجي", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "ابراهيم عبدالعزيز الناجي", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "مجدي عوض الفيتوري", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "حمدي عوض الفيتوري", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "عوض الفيتوري عطية", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "وليد صالح بوحويه", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "يوسف صالح بوحويه", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "مفتاح بوحويه الصالحين", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "علي بوحويه الصالحين", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "محمد حسن عبدالمالك", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "عثمان حسن عبدالمالك", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "حسن عبدالمالك عطية", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "حافظ صالح راف الله", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "راف الله صالح راف الله", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "محمد عبدالعاطي مقطوش", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "خليفه فرج amraje", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "سلامه فرج امراجع", p: 0, d: "لم يسدد", s: "لم يتم السداد ❌", paid: false, ph: ""},
+        {n: "عيت بوعوجه 1", p: 0, d: "لم يسدد", s: "غير مسدد ❌", paid: false, ph: ""},
+        {n: "عيت بوعوجه 2", p: 0, d: "لم يسدد", s: "غير مسدد ❌", paid: false, ph: ""},
+        {n: "عيت بوعوجه 3", p: 0, d: "لم يسدد", s: "غير مسدد ❌", paid: false, ph: ""},
+        {n: "عيت بوعوجه 4", p: 0, d: "لم يسدد", s: "غير مسدد ❌", paid: false, ph: ""},
+        {n: "عيت بوعوجه 5", p: 0, d: "لم يسدد", s: "غير مسدد ❌", paid: false, ph: ""},
+        {n: "عيت بوعوجه 6", p: 0, d: "لم يسدد", s: "غير مسدد ❌", paid: false, ph: ""},
+        {n: "عيت بوعوجه 7", p: 0, d: "لم يسدد", s: "غير مسدد ❌", paid: false, ph: ""},
+        {n: "عيت بوعوجه 8", p: 0, d: "لم يسدد", s: "غير مسدد ❌", paid: false, ph: ""},
+        {n: "عيت بوعوجه 9", p: 0, d: "لم يسدد", s: "غير مسدد ❌", paid: false, ph: ""},
+        {n: "عيت بوعوجه 10", p: 0, d: "لم يسدد", s: "غير مسدد ❌", paid: false, ph: ""},
+        {n: "عيت بوعوجه 11", p: 0, d: "لم يسدد", s: "غير مسدد ❌", paid: false, ph: ""},
+        {n: "عيت بوعوجه 12", p: 0, d: "لم يسدد", s: "غير مسدد ❌", paid: false, ph: ""}
     ];
 
     function doSearch() {
         const inputVal = document.getElementById('nameInput').value.trim();
         const box = document.getElementById('result');
-        
-        if(!inputVal) return;
+        if(!inputVal) { box.style.display = "none"; return; }
 
-        // --- أولاً: ميزة عرض الإحصائيات العامة ---
         if(inputVal === "إجمالي" || inputVal === "اجمالي") {
-            const totalCount = members.length;
-            const totalPrice = members.reduce((acc, curr) => acc + curr.p, 0);
-            const today = new Date().toLocaleDateString('ar-LY', {
-                year: 'numeric', month: 'long', day: 'numeric'
-            });
-
+            const today = new Date().toLocaleDateString('ar-LY', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
             box.innerHTML = `
-                <div style="text-align:center; color:#764ba2; font-weight:bold; border-bottom:2px solid #eee; margin-bottom:10px; padding-bottom:5px;">📊 تقرير الجمعية العام</div>
-                <div class="data-row"><span class="label">عدد المشتركين:</span><span class="value">${totalCount} مشترك</span></div>
-                <div class="data-row"><span class="label">إجمالي المبالغ:</span><span class="value" style="color:#27ae60;">${totalPrice} د.ل</span></div>
-                <div class="data-row"><span class="label">تاريخ اليوم:</span><span class="value">${today}</span></div>
-            `;
+                <div class="summary-box">
+                    <div class="summary-item">📅 تاريخ اليوم: <br><span>${today}</span></div>
+                    <div class="summary-item">👥 عدد المشتركين الكلي: <span>86 عضو</span></div>
+                    <div class="summary-item">💰 إجمالي الرصيد المجموع: <br><span>5400 د.ل</span></div>
+                </div>`;
+            box.style.display = "block"; return;
+        }
+
+        // شرط البحث: كلمتين على الأقل
+        const words = inputVal.split(/\s+/);
+        if (words.length < 2) {
+            box.innerHTML = `<div style="color:#e67e22; text-align:center; padding:15px; font-weight:bold;">⚠️ يرجى كتابة الاسم الأول والثاني على الأقل للبحث</div>`;
             box.style.display = "block";
             return;
         }
 
-        // --- ثانياً: ميزة البحث عن عضو ---
-        const words = inputVal.split(/\s+/);
-        if(words.length < 2) {
-            alert("يرجى كتابة اسمين على الأقل للبحث.");
-            box.style.display = "none";
-            return;
-        }
-
-        // تنظيف النصوص لتسهيل المطابقة (تجاهل الهمزات)
-        const normalize = (text) => text.replace(/[أإآا]/g, 'ا').replace(/ة/g, 'ه').replace(/\s+/g, '');
-        const searchNorm = normalize(inputVal);
-
-        const found = members.find(m => normalize(m.n).includes(searchNorm));
+        const normalize = (t) => t.replace(/[أإآا]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/\s+/g, ' ');
+        const sNorm = normalize(inputVal);
+        const found = members.find(m => normalize(m.n).includes(sNorm));
 
         if(found) {
+            const sClass = found.paid ? "success" : "failed";
+            let actionButtons = "";
+            
+            if(found.ph) {
+                const msg = `جمعية عيت بوعوجه وفيات: السلام عليكم سيد ${found.n}. نود إفادتكم بحالة السهم الخاص بكم: ${found.s}. بارك الله فيكم.`;
+                const intlPhone = found.ph.startsWith('0') ? '218' + found.ph.substring(1) : found.ph;
+                actionButtons = `
+                    <div class="actions-grid">
+                        <a href="https://wa.me/${intlPhone}?text=${encodeURIComponent(msg)}" target="_blank" class="btn-action bg-whatsapp">💬 واتساب</a>
+                        <a href="sms:${found.ph}?body=${encodeURIComponent(msg)}" class="btn-action bg-sms">✉️ SMS</a>
+                    </div>`;
+            }
+
             box.innerHTML = `
-                <div class="data-row"><span class="label">اسم المشترك:</span><span class="value-name">${found.n}</span></div>
-                <div class="data-row"><span class="label">إجمالي الرصيد:</span><span class="value">${found.p} د.ل</span></div>
-                <div class="data-row"><span class="label">حالة الاشتراك:</span><span class="success">مخلص لعام 2025 ✅</span></div>
-                <div class="data-row"><span class="label">تاريخ السداد:</span><span class="value">${found.d}</span></div>
+                <div class="data-row"><span class="label">👤 العضو:</span><span class="value-name">${found.n}</span></div>
+                <div class="data-row"><span class="label">💵 المسدد:</span><span class="value-name">${found.p} د.ل</span></div>
+                <div class="data-row"><span class="label">📝 الحالة:</span><span class="${sClass}">${found.s}</span></div>
+                <div class="data-row"><span class="label">📅 آخر سداد:</span><span class="value-name" style="font-size:14px;">${found.d}</span></div>
+                ${actionButtons}
             `;
             box.style.display = "block";
         } else {
-            alert("عذراً، هذا الاسم غير مدرج.");
-            box.style.display = "none";
+            box.innerHTML = `<div style="color:#e74c3c; text-align:center; padding:15px; font-weight:bold;">❌ العضو غير مسجل</div>`;
+            box.style.display = "block";
         }
     }
 
-    // دعم زر Enter للبحث
-    document.getElementById('nameInput').addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') doSearch();
-    });
+    document.getElementById('nameInput').addEventListener('keypress', (e) => { if (e.key === 'Enter') doSearch(); });
 </script>
-
 </body>
 </html>
